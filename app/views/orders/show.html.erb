@@ -6,14 +6,12 @@
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
-    <% @items.each do |item| %>
-      <%= item.item_price_cents%>
-      <%= item.product_id%>
-      <% product = Product.find_by(id: item.product_id)%>
+    <%= render 'item'%>
+    
       
-      <%= product.name%>
+      
 
-    <% end %>
+    
 
    
 
