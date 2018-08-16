@@ -1,0 +1,10 @@
+<% @items.each do |item| %>
+      <% product = Product.find_by(id: item.product_id)%>
+      <p><%= product.name%></p>
+        <ul>
+          <li><%= item.quantity%></li>
+          <li><img src="<%= product.image%>" height="50"></li>
+          <li><%= product.description%></li>
+          <li><%= item.total_price_cents%></li>
+        </ul>
+<% end %>
