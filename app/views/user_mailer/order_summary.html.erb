@@ -5,6 +5,12 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Your Order has been received!</h1>
+    <h1>Your order#<%=@order.id%> has been received!</h1>
+    <p>You ordered:</p>
+    <% @items.each do |item|%>    
+    <% product = Product.find_by(id: item.product_id)%>
+      <p><%= product.name %>  x <%=item.quantity%>    $<%=item.total_price_cents.to_f / 100 %></p>
+    <% end %>
+    <h2>Your total:  $<%= @order.total_cents.to_f/100 %></h2>
   </body>
 </html>
