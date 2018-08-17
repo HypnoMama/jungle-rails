@@ -55,6 +55,9 @@ class OrdersController < ApplicationController
       end
     end
     order.save!
+    @user = User.find(session[:user_id])
+    @order = order.id
+      UserMailer.order_summary(@user, @order ).deliver_now
     order
   end
 
