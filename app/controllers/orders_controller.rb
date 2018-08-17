@@ -56,8 +56,9 @@ class OrdersController < ApplicationController
     end
     order.save!
     @user = User.find(session[:user_id])
-    @order = order.id
-      UserMailer.order_summary(@user, @order ).deliver_now
+    @order = order
+    @items = @order.line_items
+      UserMailer.order_summary(@user, @order, @items ).deliver_now
     order
   end
 
