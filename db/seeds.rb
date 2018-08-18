@@ -132,5 +132,35 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## Reviews 
+
+Review.create({
+  product_id: 1,
+  # user_id: 1,
+  description: "This is the best shirt ever. Super comfy!",
+  rating: 5
+})
+
+Review.create({
+  product_id: 3,
+  # user_id: 2,
+  description: "This thing seriously sucks.  No way would I recommend it.",
+  rating: 2
+})
+
+Review.create({
+  product_id: 7,
+  # user_id: 2,
+  description: "Love this so much!  Hilarious gift!",
+  rating: 4
+})
+
+Review.create({
+  product_id: 8,
+  # user_id: 1,
+  description: "This damn thing broke as soon as I got it!",
+  rating: 2
+})
+
 
 puts "DONE!"
