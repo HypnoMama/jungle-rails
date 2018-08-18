@@ -47,24 +47,31 @@
     
 
     <div class="row">
-      <% if @reviews %>
-        <h1>Reviews:</h1>
+    <div class="col-sm-12">
+      <% if @reviews.length == 0 %>
+        <h1>No reviews yet...</h1>
+        <h3>Be the first to review this product!</h3>
+
+      <% else %>
+            
+      <h1>Reviews:</h1>
+    
         <% @reviews.reverse_each do |review| %>
   
           <h3>Rating: <%= '⭐'*review.rating %></h3> 
-          <h3><%= review.description %></h3>
+          <h4><%= review.description %></h4>
           <% if review.user_id %>
           <% user = User.find_by(id: review.user_id) %> 
-            <h2>Reviewed by: <%= user.first_name%></h2>
+            <h6>Reviewed by: <%= user.first_name%></h6>
             <% if user_logged_in == user %>
-            <%= link_to "destroy", product_review_path(@product.id, review.id), method: :delete, data: { confirm: 'Are you sure?'} %>
+            <%= link_to "delete", product_review_path(@product.id, review.id), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-primary btn-delete' %>
             <% end %>
           <% end %>
           <hr>
         <% end %>
       <% end %>
     </div>
-
+    </div>
     
   </article>
 
