@@ -9,4 +9,32 @@
 // Global
 body {
   padding-top: 70px;
+  color: #3C5455;
+}
+
+.btn-primary {
+  background-color: rgb(129, 194, 141);
+}
+
+.btn-delete {
+  background-color: #F35F62;
+}
+
+select {
+  height: 22px;
+}
+
+hr {
+ 
+  opacity: .5;
+  // border-color: rgb(11, 111, 114);
+  
+    border: 0;
+    height: 1px;
+    background: rgb(11, 111, 114);
+
+}
+
+.row {
+  margin-top: 2em;
 }
