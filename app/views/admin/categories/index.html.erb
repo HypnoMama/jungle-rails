@@ -2,6 +2,8 @@
 
 <div class="well">
 <%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
+<%= link_to 'Dashboard', [:admin, :root], class: 'btn btn-info' %>
+
 </div>
 
 <% @categories.each do |category| %>
