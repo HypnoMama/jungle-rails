@@ -14,7 +14,6 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    # @product = Product.find params[:product_id]
     if Review.find(params[:id]).destroy
       flash[:notice] = "Review Deleted!"
       redirect_to :back
