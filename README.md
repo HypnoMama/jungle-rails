@@ -26,3 +26,11 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+## Screenshots
+
+!["Jungle Welcome"](https://github.com/HypnoMama/jungle-rails/blob/master/app/assets/images/JungleWelcome.png?raw=true)
+!["Jungle Reviews"](https://github.com/HypnoMama/jungle-rails/blob/master/app/assets/images/JungleReviews.png?raw=true)
+!["No Review Yet"](https://github.com/HypnoMama/jungle-rails/blob/master/app/assets/images/JungleNoReviewsMessage.png?raw=true)
+!["Admin Products Page"](https://github.com/HypnoMama/jungle-rails/blob/master/app/assets/images/JungleAdminNew.png?raw=true)
+!["Admin Authentication"](https://github.com/HypnoMama/jungle-rails/blob/master/app/assets/images/JungleAdminAuthentication.png?raw=true)
