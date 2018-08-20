@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
       end
 
       it 'shoud not be valid with a password and confirmation mismatch' do 
-        user = User.new password: 'thisisapassword', password_confirmation: 'short'
+        user = User.new password: 'thisisapassword', password_confirmation: 'shortandwrong'
         expect(user).to_not be_valid
       end
 
@@ -43,8 +43,25 @@ RSpec.describe User, type: :model do
       it 'should not be valid if last_name is not present' do 
         user = User.new password: '123456789', password_confirmation: '123456789', email: 'testy@test.com', first_name: 'alex'
         expect(user).to_not be_valid
-      end
+      end    
     end
- 
   end
+
+  describe '.authenticate_with_credentials' do 
+    context 'upon login submit' do 
+      it 'should log in if the email and password exist and match' do 
+        @user = User.new email: 'testing@testing.com', password: '123456789', password_confirmation: '123456789', first_name: 'Sarah', last_name: 'Hermsen'
+        @user.save!   
+        expect(User.authenticate_with_credentials('testing@testing.com', '123456789')).to eq(@user)
+        expect(User.authenticate_with_credentials('  testing@testing.com  ', '  123456789 ')).to eq(@user)
+        expect(User.authenticate_with_credentials('TeSting@testing.com', '123456789')).to eq(@user)
+
+      end
+
+     
+
+    end
+  end
+
+
 end
