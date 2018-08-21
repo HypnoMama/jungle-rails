@@ -36,6 +36,7 @@ gem 'rmagick'
 gem 'stripe'
 gem 'faker'
 
+
 gem 'aws-sdk', '~> 2'
 
 # Use Capistrano for deployment
@@ -53,6 +54,7 @@ group :test do
   gem 'capybara'
   gem 'poltergeist'
   gem 'database_cleaner'
+  
 end
 
 group :development do
